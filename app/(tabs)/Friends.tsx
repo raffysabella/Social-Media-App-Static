@@ -30,12 +30,12 @@ export default function Friends() {
     <View className="flex-1">
         <ScrollView>
             {feeds.map((feed) => (
-                <Card key={feed.id}>
-                    <View className='flex-row items-center mt-2 bg-gray-300 h-23 p-2 rounded-md'>
+                <View key={feed.id}>
+                    <View className='flex-row items-center mt-1 bg-gray-300 h-23 p-2 rounded-md'>
                     <CardPfp source={feed.userProfile} />
                     <CardUserName>{feed.userName}</CardUserName>
                     </View>
-                </Card>
+                </View>
             ))} 
         </ScrollView>
     </View>

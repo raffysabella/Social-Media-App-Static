@@ -18,7 +18,7 @@ export default function Button({title, desc, onCount}: ButtonProps) {
            <View className='flex-row justify-center align-middle bg-zinc-400 p-2 rounded-md m-1'>
         
         <Text >{title}</Text>
-        <Text className='mr-2'>{desc}</Text>
+        <Text className='mr-2'> {desc}</Text>
         </View>
       </TouchableOpacity>
     

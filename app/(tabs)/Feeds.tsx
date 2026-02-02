@@ -19,7 +19,7 @@ export type FeedProps = {
 }
 
 export default function Feeds() {
-    const [feeds, setFeeds] = useState<FeedProps[]>([])
+    const [feeds, setFeeds] = useState<FeedProps[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,7 +30,11 @@ export default function Feeds() {
     }, []);
 
   return (
-    <View className="flex-1 mt-7">
+    <View className="flex-1 mt-7 justify-center items-center">
+        <View className='bg-slate-200 w-[95%] h-20 justify-center items-center' >
+
+            <Text className='color-yellow-500'>Social Media App - Static</Text>
+        </View>
         <ScrollView>
             {feeds.map((feed) => (
                 <Card key={feed.id}>

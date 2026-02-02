@@ -4,7 +4,7 @@ import { Text, View, ToastAndroid } from 'react-native';
 
 export default function Index() {
   const [progress, setProgress] = useState(0);
-  const duration = 2000;
+  const duration = 5000;
   const { usrId, usrFirstName } = useLocalSearchParams();
   const [status, setStatus] = useState("");
 
@@ -28,14 +28,14 @@ export default function Index() {
      if(progress >= 100){
       setStatus("Done");
     } else if (progress >= 35) {
-      setStatus("Checking active status")
+      setStatus("Checking active session")
     }
     else {
       setStatus("Loading");
     }
   }, [progress])
 
-  
+
 
   return (
     <View className="flex-1 justify-center items-center bg-white px-10">

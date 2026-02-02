@@ -66,7 +66,7 @@ export default function Profile() {
     } else if (show === "Albums") {
       return (
         <View className="w-[95%] flex-row flex-wrap justify- p-4">
-          <UserAlbums />
+          <UserAlbums session={usrId} />
         </View>
           
       )
@@ -89,7 +89,7 @@ export default function Profile() {
       </View>
 
       <View className='w-[95%]'>
-        <Text className='text-[43px]'>{usrFirstName} {usrMiddleName} {usrLastName}</Text>
+        <Text className='text-[43px] font-extrabold'>{usrFirstName} {usrMiddleName} {usrLastName}</Text>
         <Text className='text-[23px] color-gray-500 '>@{usrName}</Text>
       </View>
         

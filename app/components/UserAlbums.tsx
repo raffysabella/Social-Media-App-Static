@@ -4,9 +4,11 @@ import { Image, Text, View } from 'react-native';
 import { UserProps } from '../(tabs)/Profile';
 import user_data from '../../data/user_data';
 
+type AlbumProps = {
+  session: number
+}
 
-
-export default function UserAlbums() {
+export default function UserAlbums({session}: AlbumProps) {
   const [albumData, setAlbumData] = useState<UserProps []>([]);
 
   useEffect(() => {
@@ -14,9 +16,9 @@ export default function UserAlbums() {
     // if (targetUser) {
     //   setAlbumData(targetUser.photos);
     // }
-    setAlbumData(user_data[0]?.photos || []);
+    setAlbumData(user_data[session]?.photos || []);
   }, [])
-
+  console.log('\x1b[32mAlbum Data Fetched from id \x1b[32m' + session)
   console.log(albumData);
 
   return (

@@ -24,7 +24,6 @@ export default function _layout() {
             
             options={{
                 headerShown: false,
-                tabBarBadge: 1,
                 tabBarIcon: () => <FontAwesome size={30} name="feed" />
             }}
             />
@@ -32,7 +31,6 @@ export default function _layout() {
             name="Friends"
             options={{
                 headerTitle: 'Friend list',
-                tabBarBadge: 10,
                 tabBarIcon: () => <FontAwesome size={30} name="group" />
             }}
             />

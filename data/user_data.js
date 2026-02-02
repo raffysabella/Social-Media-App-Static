@@ -1,6 +1,6 @@
 const user_data = [
     {
-        id: 1,
+        id: 0,
         userName: 'wyatt_kft',
         pass: 'wyatf09',
         profile: require('../assets/profile/img003.jpg'),
@@ -19,7 +19,7 @@ const user_data = [
                 photoId: 2,
                 photo: require('./../assets/wyatt-photo/img-w002.jpg'),
                 p_likes: 342
-            },
+            }, 
             {
                 photoId: 3,
                 photo: require('./../assets/wyatt-photo/img-w003.jpg'),
@@ -82,15 +82,52 @@ const user_data = [
         ]
     },
     {
-        id: 2,
+        id: 1,
         userName: 'miller_gwetler',
         pass: 'miluwu',
         profile: require('../assets/profile/img004.jpg'),
-        firstName: 'Miller',
+        firstName: 'Miller Jane',
         middleName: 'Van',
         lastName: 'Genllie',
-        following: 832,
-        followers: 999,
+        following: 82,
+        followers: 979,
+        photos: [
+            {
+                photoId: 1,
+                photo: require('./../assets/miller-photo/miller001.jpg'),
+                p_likes: 654
+            },
+            {
+                photoId: 2,
+                photo: require('./../assets/miller-photo/miller002.jpg'),
+                p_likes: 233
+            },
+            {
+                photoId: 3,
+                photo: require('./../assets/miller-photo/miller003.jpg'),
+                p_likes: 23
+            },
+            {
+                photoId: 4,
+                photo: require('./../assets/miller-photo/miller004.jpg'),
+                p_likes: 23
+            },
+            {
+                photoId: 5,
+                photo: require('./../assets/miller-photo/miller005.jpg'),
+                p_likes: 243
+            },
+            {
+                photoId: 6,
+                photo: require('./../assets/miller-photo/miller006.jpg'),
+                p_likes: 19
+            },
+            {
+                photoId: 7,
+                photo: require('./../assets/miller-photo/miller007.jpg'),
+                p_likes: 37
+            },
+        ],
         post: [
             {
                 postId: 1,
