@@ -35,6 +35,7 @@ function CustomDrawerContent(props: any){
     </DrawerContentScrollView>
     <View className='justify-center items-center mb-2'>
       <Text> Social Media App - Static | by Raffy Sabella</Text>
+      <Text className='font-semibold'>v1.0.0.1</Text>
     </View>
     </>
   )
@@ -59,6 +60,15 @@ export default function ProfileDrawerLayout() {
           drawerItemStyle: {display: 'none'}
         }}
       />
+      <Drawer.Screen
+        name="details"
+        options={{
+          drawerLabel: 'Project Details',
+          title: 'Implementation Manual',
+        }}
+      />
     </Drawer>
+    
+    
   );
 }
