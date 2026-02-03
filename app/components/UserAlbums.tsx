@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Text, View } from 'react-native';
 
-import { UserProps } from '../(tabs)/Profile';
+import { UserProps } from '../(tabs)/profile/Profile';
 import user_data from '../../data/user_data';
 
 type AlbumProps = {

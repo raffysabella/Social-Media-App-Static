@@ -2,7 +2,7 @@ import { Image, ImageProps, Text, TextProps, View, ViewProps } from "react-nativ
 import '../global.css';
 
 const Card = ({ ...props }: ViewProps) => {
-  return <View className=" p-3 rounded-md shadow-md " {...props} />;
+  return <View className=" p-3 rounded-md shadow-md w-[95%] " {...props} />;
 };
 
 const CardUserName = ({ ...props }: TextProps) => {

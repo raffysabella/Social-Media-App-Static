@@ -1,7 +1,7 @@
 import { router } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
-import { UserProps } from '../(tabs)/Profile';
+import { UserProps } from '../(tabs)/profile/index';
 import usrData from './../../data/user_data';
 
 export default function sign_in() {
@@ -30,8 +30,8 @@ export default function sign_in() {
             showToast();
             const session = usrData.find( u => u.userName === userName);
             setTimeout(() => {
-                router.navigate({
-                    pathname: '/Profile',
+                router.replace({
+                    pathname: '/(tabs)/profile',
                     params: {
                         usrId: session.id,
                         usrFirstName: session.firstName,
@@ -52,8 +52,8 @@ export default function sign_in() {
 
 return (
     <View className='flex-1 justify-center items-center'>
-        <View className='fixed mb-12 flex-2'>
-            <Text className='text-yellow-500 text-4xl font-extrabold'>Social Media App</Text>
+        <View className='fixed mb-14 flex-2'>
+            <Text className='text-yellow-500 text-6xl font-extrabold'>Social Media App</Text>
         </View>
         <View className='justify-center items-center bg-slate-400 h-96 w-[85%] rounded-md'>
       <Text className='color-white text-4xl mb-12'>Sign in to continue</Text>
@@ -72,7 +72,7 @@ return (
         <Text className='color-green-100 w-full text-xl text-center'>Sign in</Text>
       </TouchableOpacity>
       </View>
-      <View className='bg-green-100 h-14 w-[85%] justify-center items-center fixed mt-12 border-red-200 border'>
+      <View className='bg-green-100 h-14 w-[85%] justify-center items-center fixed border-red-200 border'>
         <Text>You can check the credentials in data/user_data for this demo</Text>
       </View>
     </View>

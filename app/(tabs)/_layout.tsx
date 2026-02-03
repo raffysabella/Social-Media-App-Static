@@ -5,11 +5,11 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { router, useLocalSearchParams } from 'expo-router';
 
 export default function _layout() {
-    const {usrFirstName, usrLastName} = useLocalSearchParams();
+    const {usrFirstName} = useLocalSearchParams();
     const [name, setName] = useState("");
 
     useEffect(() => {
-        setName(usrFirstName + " " + usrLastName);
+        setName(`${usrFirstName}'s Profile Zone`);
     }, [usrFirstName])
 
   return (
@@ -35,10 +35,10 @@ export default function _layout() {
             }}
             />
         <Tabs.Screen
-            name="Profile"
+            name="profile"
             options={{
                 headerTitle: name,
-                headerShown: true,
+                headerShown: false,
                 tabBarIcon: () => <FontAwesome size={30} name="user" />
             }}
             />

@@ -47,7 +47,6 @@ export default function Feeds() {
                     <Text className='font-bold text-xl' >{feed.headerCapt}</Text>
                     <Text>{feed.captions}</Text>
                     </View>
-
                     <View className='justify-between flex flex-row'>
                     <View>
                         <Button title="👍 Likes" desc={feed.likes}/>

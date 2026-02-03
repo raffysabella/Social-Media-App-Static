@@ -41,7 +41,7 @@ export default function Index() {
     <View className="flex-1 justify-center items-center bg-white px-10">
       <Text className="text-[51px] font-extrabold text-yellow-500">Social Media App</Text>
       <Text className="text-gray-500 mb-8 text-[23px]">"Where everything is hard-coded"</Text>
-      <Text className="text-gray-500 mb-8 text-[13px] ">File based route, fetching data and params is applied on this static app project.</Text>
+      <Text className="text-gray-500 mb-8 text-[13px] ">File based route, Fetching data, Toaster android and params is applied on this static app project.</Text>
      <View className="relative mt-20 w-96 h-10 bg-gray-200 rounded-full overflow-hidden justify-center">
   <View 
     className="absolute left-0 top-0 h-full bg-yellow-500" 

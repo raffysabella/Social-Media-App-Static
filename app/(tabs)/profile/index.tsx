@@ -1,10 +1,9 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Button } from '@react-navigation/elements';
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Image, ScrollView, StyleSheet, Text, ToastAndroid, TouchableOpacity, View } from 'react-native';
-import UserAlbums from "../components/UserAlbums";
-import UserPost from "../components/UserPost";
+import UserAlbums from "../../components/UserAlbums";
+import UserPost from "../../components/UserPost";
 
 
 export type UserProps = {
@@ -26,7 +25,8 @@ export type UserProps = {
   title: string,
   desc: string,
   likes: number,
-  comments: number
+  comments: number,
+  date: string
 }
 
 
@@ -42,7 +42,7 @@ export default function Profile() {
     usrFollowing,
     usrFollowers,
    } = useLocalSearchParams();
-   const [show, setShow] = useState("Albums");
+   const [show, setShow] = useState("Post");
 
    useEffect(() => {
   if (!usrId || usrId === "") {
@@ -50,18 +50,11 @@ export default function Profile() {
     ToastAndroid.show("Session Expired", ToastAndroid.SHORT);
   }
 }, [usrId]); 
- 
-
-   const handleLogOut = () => {
-      router.dismissAll(); 
-      router.replace('/(auth)/sign_in');
-      ToastAndroid.show("Session Expired | Signing out..", ToastAndroid.SHORT)
-  }
 
   const ShowRender = () => {
     if (show === "Post") {
       return (
-          <UserPost />
+          <UserPost session={usrId} profile={usrProfile} userName={usrName} />
       )
     } else if (show === "Albums") {
       return (
@@ -106,34 +99,24 @@ export default function Profile() {
           <Text>Giving me an option was your biggest mistake</Text>
         </View>
 
-        <View className="w-[95%] justify-around flex-row mt-3">
-          <TouchableOpacity className="items-center" onPress={() => setShow('Albums')}>
-            <FontAwesome size={25} name='photo' />
-            <Text>Albums</Text>
-          </TouchableOpacity>
-          
+        <View className="w-[95%] justify-around flex-row mt-3 sticky">
+
           <TouchableOpacity className="items-center" onPress={() => setShow('Post')}>
             <FontAwesome size={25} name='feed' />
             <Text>Post</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity className="items-center" onPress={() => setShow('Albums')}>
+            <FontAwesome size={25} name='photo' />
+            <Text>Albums</Text>
+          </TouchableOpacity>
+          
+
+
         </View>
 
           <ShowRender />
-
-
-        <View className='mt-9'>
-             <Button onPressIn={() => router.navigate({
-                pathname: '/',
-                params: {
-                  usrId: usrId,
-                  usrFirstName: usrFirstName
-                }
-             })}>See Loading Screen</Button>
-        </View>
-        <View className='m-1 mb-28'>
-             <Button className='w-42' onPress={handleLogOut}>          Log out           </Button>
-        </View>
+          
     </View>
     </ScrollView>
   )
